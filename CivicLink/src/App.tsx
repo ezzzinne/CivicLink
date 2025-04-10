@@ -1,12 +1,18 @@
-
-
 import { useTranslation } from 'react-i18next'
 import './App.css'
+import GlobeIcon from './assets/globe.svg';
+import HeroImg from './assets/img.svg';
+import Vector1 from './assets/Vector.svg';
+import Vector2 from './assets/Vector1.svg';
+import Vector3 from './assets/Vector2.svg';
+import Social1 from './assets/Frame.svg';
+import Social2 from './assets/Frame1.svg';
+import Social3 from './assets/Frame2.svg';
 
 function App() {
   const { t, i18n } = useTranslation();
 
-  const handleLanguageChange = (e) => {
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     i18n.changeLanguage(e.target.value);
   };
 
@@ -20,7 +26,7 @@ function App() {
           <div className="nav-controls">
             <button className="btn connect-btn">Connect Wallet</button>
             <div className="language-switcher">
-              <img src="./assets/globe.svg" alt="language"></img>
+              <img src={GlobeIcon} alt="language"></img>
               <select onChange={handleLanguageChange}>
                 <option value="en">English</option>
                 <option value="ig">Igbo</option>
@@ -39,24 +45,24 @@ function App() {
             <button className="btn primary-btn">{t("learnMore")}</button>
             <button className="btn secondary-btn">{t("learnMore")}</button>
           </div>
-          <img src="./assets/img.svg" alt="" className="hero-img"></img>
+          <img src={HeroImg} alt="" className="hero-img"></img>
         </div>
 
         {/* Section 2 */}
         <section className="features">
           <p className="features-heading">{t("keyFeatures")}</p>
           <div className="feature-card">
-            <img src="./assets/Vector.svg" alt=""></img>
+            <img src={Vector1} alt=""></img>
             <h3>{t("feature1Title")}</h3>
             <p>{t("feature1Text")}</p>
           </div>
           <div className="feature-card">
-            <img src="./assets/Vector1.svg" alt=""></img>
+            <img src={Vector2} alt=""></img>
             <h3>{t("feature2Title")}</h3>
             <p>{t("feature2Text")}</p>
           </div>
           <div className="feature-card">
-            <img src="./assets/Vector2.svg" alt=""></img>
+            <img src={Vector3} alt=""></img>
             <h3>{t("feature3Title")}</h3>
             <p>{t("feature3Text")}</p>
           </div>
@@ -88,9 +94,9 @@ function App() {
           <div className="footer-links">
             <h4>{t("connect")}</h4>
             <div className="icons">
-              <a href="#"><img src="./src/assets/Frame.svg" alt=""></img></a>
-              <a href="#"><img src="./src/assets/Frame1.svg" alt=""></img></a>
-              <a href="#"><img src="./src/assets/Frame2.svg" alt="" /></a>
+              <a href="#"><img src={Social1} alt="social"></img></a>
+              <a href="#"><img src={Social2} alt="social"></img></a>
+              <a href="#"><img src={Social3} alt="social" /></a>
             </div>
           </div>
 
