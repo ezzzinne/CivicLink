@@ -20,7 +20,7 @@ function App() {
           <div className="nav-controls">
             <button className="btn connect-btn">Connect Wallet</button>
             <div className="language-switcher">
-              <img src="./src/assets/globe.svg" alt="language"></img>
+              <img src="./assets/globe.svg" alt="language"></img>
               <select onChange={handleLanguageChange}>
                 <option value="en">English</option>
                 <option value="ig">Igbo</option>
@@ -39,24 +39,24 @@ function App() {
             <button className="btn primary-btn">{t("learnMore")}</button>
             <button className="btn secondary-btn">{t("learnMore")}</button>
           </div>
-          <img src="./src/assets/img.svg" alt="" className="hero-img"></img>
+          <img src="./assets/img.svg" alt="" className="hero-img"></img>
         </div>
 
         {/* Section 2 */}
         <section className="features">
           <p className="features-heading">{t("keyFeatures")}</p>
           <div className="feature-card">
-            <img src="./src/assets/Vector.svg" alt=""></img>
+            <img src="./assets/Vector.svg" alt=""></img>
             <h3>{t("feature1Title")}</h3>
             <p>{t("feature1Text")}</p>
           </div>
           <div className="feature-card">
-            <img src="./src/assets/Vector1.svg" alt=""></img>
+            <img src="./assets/Vector1.svg" alt=""></img>
             <h3>{t("feature2Title")}</h3>
             <p>{t("feature2Text")}</p>
           </div>
           <div className="feature-card">
-            <img src="./src/assets/Vector2.svg" alt=""></img>
+            <img src="./assets/Vector2.svg" alt=""></img>
             <h3>{t("feature3Title")}</h3>
             <p>{t("feature3Text")}</p>
           </div>
