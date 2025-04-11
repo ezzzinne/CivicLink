@@ -46,7 +46,9 @@ export default function LandingPage() {
           <h2>{t("heroTitle")}</h2>
           <p>{t("heroText")}</p>
           <div className="cta-buttons">
-            <button className="btn primary-btn">{t("getStarted")}</button>
+            <Link to="/lookup">
+              <button className="btn primary-btn">{t("getStarted")}</button>
+            </Link>
             <button className="btn secondary-btn">{t("learnMore")}</button>
           </div>
           <img src={HeroImg} alt="" className="hero-img"></img>
