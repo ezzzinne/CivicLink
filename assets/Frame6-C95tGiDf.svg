@@ -1,0 +1,41 @@
+<svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="49" height="49" fill="#595656"/>
+<path d="M-5376 -1424C-5376 -1425.1 -5375.1 -1426 -5374 -1426H13131C13132.1 -1426 13133 -1425.1 13133 -1424V3609C13133 3610.1 13132.1 3611 13131 3611H-5374C-5375.1 3611 -5376 3610.1 -5376 3609V-1424Z" fill="#444444"/>
+<path d="M-5374 -1425H13131V-1427H-5374V-1425ZM13132 -1424V3609H13134V-1424H13132ZM13131 3610H-5374V3612H13131V3610ZM-5375 3609V-1424H-5377V3609H-5375ZM-5374 3610C-5374.55 3610 -5375 3609.55 -5375 3609H-5377C-5377 3610.66 -5375.66 3612 -5374 3612V3610ZM13132 3609C13132 3609.55 13131.6 3610 13131 3610V3612C13132.7 3612 13134 3610.66 13134 3609H13132ZM13131 -1425C13131.6 -1425 13132 -1424.55 13132 -1424H13134C13134 -1425.66 13132.7 -1427 13131 -1427V-1425ZM-5374 -1427C-5375.66 -1427 -5377 -1425.66 -5377 -1424H-5375C-5375 -1424.55 -5374.55 -1425 -5374 -1425V-1427Z" fill="white" fill-opacity="0.1"/>
+<g clip-path="url(#clip0_61_1037)">
+<rect width="1440" height="1819" transform="translate(-695 -1001)" fill="white"/>
+<g filter="url(#filter0_dd_61_1037)">
+<g clip-path="url(#clip1_61_1037)">
+<path d="M-343 -389C-343 -393.418 -339.418 -397 -335 -397H385C389.418 -397 393 -393.418 393 -389V174C393 178.418 389.418 182 385 182H-335C-339.418 182 -343 178.418 -343 174V-389Z" fill="white"/>
+<path d="M-318.742 -40.2402C-318.742 -44.3824 -315.384 -47.7402 -311.242 -47.7402H360.758C364.9 -47.7402 368.258 -44.3824 368.258 -40.2402V149.76C368.258 153.902 364.9 157.26 360.758 157.26H-311.242C-315.384 157.26 -318.742 153.902 -318.742 149.76V-40.2402Z" fill="#F9FAFB"/>
+<path d="M-318.742 -40.2402C-318.742 -44.3824 -315.384 -47.7402 -311.242 -47.7402H360.758C364.9 -47.7402 368.258 -44.3824 368.258 -40.2402V149.76C368.258 153.902 364.9 157.26 360.758 157.26H-311.242C-315.384 157.26 -318.742 153.902 -318.742 149.76V-40.2402Z" stroke="#E5E7EB"/>
+<path d="M38.7578 42.7598V38.7598C38.7578 36.638 37.915 34.6032 36.4147 33.1029C34.9144 31.6026 32.8795 30.7598 30.7578 30.7598H18.7578C16.6361 30.7598 14.6012 31.6026 13.101 33.1029C11.6007 34.6032 10.7578 36.638 10.7578 38.7598V42.7598" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24.7578 22.7598C29.1761 22.7598 32.7578 19.178 32.7578 14.7598C32.7578 10.3415 29.1761 6.75977 24.7578 6.75977C20.3395 6.75977 16.7578 10.3415 16.7578 14.7598C16.7578 19.178 20.3395 22.7598 24.7578 22.7598Z" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_dd_61_1037" x="-355" y="-399" width="760" height="603" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="3" operator="erode" in="SourceAlpha" result="effect1_dropShadow_61_1037"/>
+<feOffset dy="10"/>
+<feGaussianBlur stdDeviation="7.5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_61_1037"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="4" operator="erode" in="SourceAlpha" result="effect2_dropShadow_61_1037"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="3"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="effect1_dropShadow_61_1037" result="effect2_dropShadow_61_1037"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_61_1037" result="shape"/>
+</filter>
+<clipPath id="clip0_61_1037">
+<rect width="1440" height="1819" fill="white" transform="translate(-695 -1001)"/>
+</clipPath>
+<clipPath id="clip1_61_1037">
+<path d="M-343 -389C-343 -393.418 -339.418 -397 -335 -397H385C389.418 -397 393 -393.418 393 -389V174C393 178.418 389.418 182 385 182H-335C-339.418 182 -343 178.418 -343 174V-389Z" fill="white"/>
+</clipPath>
+</defs>
+</svg>
