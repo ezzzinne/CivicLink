@@ -1,5 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
+
+
 // Define a type for a single representative
 interface Representative {
   name: string;
@@ -28,14 +31,14 @@ const initialState: RepresentativeState = {
 
 // Async thunk to fetch states
 export const fetchStates = createAsyncThunk('gov/fetchStates', async () => {
-  const res = await fetch('https://civiclink-ktup.onrender.com/api/v1/government/state');
+  const res = await fetch(`${baseUrl}/government/state`);
   const data = await res.json();
   return data.states;
 });
 
 // Async thunk to fetch LGAs by state
 export const fetchLgas = createAsyncThunk('gov/fetchLgas', async (state: string) => {
-  const res = await fetch(`https://civiclink-ktup.onrender.com/api/v1/government/lga?state=${state}`);
+  const res = await fetch(`${baseUrl}/government/lga?state=${state}`);
   const data = await res.json();
   return data.lgas;
 });
@@ -44,7 +47,7 @@ export const fetchLgas = createAsyncThunk('gov/fetchLgas', async (state: string)
 export const fetchRepresentatives = createAsyncThunk(
   'gov/fetchRepresentatives',
   async ({ state, lga }: { state: string; lga: string }) => {
-    const res = await fetch(`https://civiclink-ktup.onrender.com/api/v1/government/representatives?state=${state}&lga=${lga}`);
+    const res = await fetch(`${baseUrl}/government/representatives?state=${state}&lga=${lga}`);
     const data = await res.json();
     return data.representatives;
   }
