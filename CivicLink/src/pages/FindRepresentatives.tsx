@@ -14,6 +14,7 @@ import Container from '../assets/Container.svg';
 import { Link } from 'react-router-dom';
 // import nigeriaData from '../data/nigeria-data.json';
 import rawNigeriaData from '../data/nigeria-data.json';
+import ReportIssueForm from '../components/ReportIssueForm';
 
 
 interface Representative {
@@ -108,7 +109,9 @@ export default function GovernmentLookupPage() {
             <div
               key={tab}
               className={`tab ${activeTab === tab ? 'active' : ''}`}
-              onClick={() => setActiveTab(tab)}
+              onClick={() => {
+                console.log('Tab clicked:', tab);
+                setActiveTab(tab);}}
             >
               <p>{tab.charAt(0).toUpperCase() + tab.slice(1)}</p>
             </div>
@@ -191,12 +194,13 @@ export default function GovernmentLookupPage() {
             )}
 
           </div>
-        ): (
+        ) : activeTab === 'report issue' ? (
+          <ReportIssueForm />
+        ) : (
           <div className="tab-placeholder">
             <div className="spinner" />
             <p>Loading content for this section...</p>
         </div>
-
         )}
       </section>
 
