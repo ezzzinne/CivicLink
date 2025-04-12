@@ -16,14 +16,11 @@
     gap: 2.5rem;
   }
 
-  .nav-links li {
-    list-style: none;
-  }
-
-  .nav-links a {
+  .nav-links li, .nav-links a {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    list-style: none;
   }
   
   .gov-header {
@@ -102,6 +99,10 @@
     padding: 2rem;
     border-radius: 10px;
     margin-top: 2rem;
+    
+  }
+
+  .location-box {
     background: #F0FDF4;
   }
 
@@ -165,6 +166,91 @@
     gap: 2rem;
     font-family: "Outifit", sans-serif;
   }
+
+  .rep-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .rep-card-ui {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.05);
+  }
+  
+  .rep-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .rep-role {
+    font-weight: 500;
+    color: #059669;
+  }
+  
+  .rep-party {
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin: 0.2rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .rep-email {
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin: 0.2rem 0;
+    text-align: left;
+    display: flex;
+  }
+  
+  .rep-email a {
+    color: #2563EB;
+    text-decoration: none;
+  }
+  
+  .contact-btn {
+    margin-top: 1rem;
+    background-color: #059669;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contact-btn-span {
+    padding-top: 0.35rem;
+  }
+
+  .see-more-card {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .see-more-rep {
+    padding-top: 2.5rem;
+  }
+  
+  .see-more-btn {
+    background-color: #059669;
+  }  
   
   .footer-links {
     display: flex;
@@ -221,6 +307,39 @@
     border-radius: 5px;
     border: 1px solid #ccc;
   }
+
+  .tab-placeholder {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #f0fdf4;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  
+  .tab-placeholder p {
+    color: #4b5563;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  
+  /* Fancy loading spinner */
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #047857;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: spin 0.9s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
 
   @media (max-width: 768px) {
     .nav-container {

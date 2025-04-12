@@ -1,0 +1,31 @@
+{
+  "Anambra": {
+    "lgas": ["Awka South", "Onitsha North"],
+    "representatives": [
+      {
+        "name": "Hon. Chuks Anioke",
+        "role": "Senator",
+        "party": "PDP",
+        "email": "chuksdman@senate.gov.ng",
+        "lga": "Awka South"
+      },
+      {
+        "name": "Nneka Nzekwe",
+        "role": "House Of Representatives",
+        "party": "PDP",
+        "email": "NnekaNzekwe22@reps.gov.ng",
+        "lga": "Awka South"
+      },
+      {
+        "name": "Michael Otti",
+        "role": "State Assembly",
+        "party": "APGA",
+        "email": "michael.johnson@assembly.gov.ng",
+        "lga": "Awka South"
+      }
+    ]
+  }
+}
+
+  
+  

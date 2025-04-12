@@ -9,6 +9,7 @@ import Social1 from '../assets/Frame.svg';
 import Social2 from '../assets/Frame1.svg';
 import Social3 from '../assets/Frame2.svg';
 import { Link } from 'react-router-dom';
+import ConnectWallet from '../components/ConnectWallet';
 
 export default function LandingPage() {
   const { t, i18n } = useTranslation();
@@ -25,10 +26,12 @@ export default function LandingPage() {
         <nav className="navbar">
           <h1 className="logo">CIVICLINK</h1>
           <div className="nav-controls">
-            <Link to="/lookup">
-                <button className="btn connect-btn">Find Representatives</button>
+            <Link to="/">
+                <button className="btn connect-btn">Home</button>
             </Link>
-            <button className="btn connect-btn">Connect Wallet</button>
+            <button className="btn connect-btn">
+              <ConnectWallet />
+            </button>
             <div className="language-switcher">
               <img src={GlobeIcon} alt="language"></img>
               <select onChange={handleLanguageChange}>
