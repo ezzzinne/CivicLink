@@ -28,23 +28,60 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    background-color: #003D24;
+    z-index: 10;
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+    padding: 2rem;
   }
   
+  .nav-link {
+    margin-left: 1.5rem;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: wheat;
+  }
+  
+
   .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #059669;
   }
 
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
   .nav-links li {
     color: #059669;
+  }
+
+  .language {
+    display: inline;
+    color: white;
   }
   
   .nav-controls {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    gap: 9rem;
+    margin: 0 auto;
     color: #059669;
   }
   
@@ -54,18 +91,24 @@
     gap: 0.25rem;
   }
   
-  .language-switcher select, .connect-btn {
+  .language-switcher select {
     padding: 0.4rem;
     font-size: 0.9rem;
-    color: #059669;
+    color: white;
     border: none;
     width: auto;
     white-space: nowrap;
+    background: none;
+    background-color: transparent;
+  }
+
+  .language-switcher select option {
+    color: black;
   }
   
   .hero {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 0;
     background-color: #ECFDF5;
     min-height: 300px;
     padding: 2rem;

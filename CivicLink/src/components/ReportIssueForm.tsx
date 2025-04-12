@@ -1,6 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './ReportIssueForm.css';
-import Frame9 from "../assets/Frame9.svg"
+import Frame9 from "../assets/Frame9.svg";
+import Frame11 from "../assets/Frame11.svg"
+import rawNigeriaData from '../data/nigeria-data.json';
+import LocationSelector from './LocationSelector';
+
 
 const steps = ['Select Category', 'Upload Photos & Location', 'Review & Submit'];
 
@@ -8,20 +12,93 @@ export default function ReportIssueForm() {
   const [step, setStep] = useState(1);
   const [category, setCategory] = useState('');
   const [description, setDescription] = useState('');
-  const [location, setLocation] = useState('');
+  const [location] = useState('');
   const [email, setEmail] = useState('');
 
-  const next = () => setStep((prev) => Math.min(prev + 1, steps.length));
+  const next = () => {
+    if (step === 1) {
+      let valid = true;
+      if (!category) {
+        setCategoryError('Please select a category.');
+        valid = false;
+      } else {
+        setCategoryError('');
+      }
+  
+      if (!description.trim()) {
+        setDescriptionError('Please enter a description.');
+        valid = false;
+      } else {
+        setDescriptionError('');
+      }
+  
+      if (!valid) return;
+    }
+  
+    if (step === 2) {
+      if (!selectedState || !selectedLga) {
+        setLocationError('Please select both a State and LGA.');
+        return;
+      }
+      setLocationError('');
+    }
+  
+    setStep((prev) => Math.min(prev + 1, steps.length));
+  };
   const back = () => setStep((prev) => Math.max(prev - 1, 1));
 
   const handleSubmit = () => {
-    const report = { category, description, location, email };
+    if (!email || !email.includes('@')) {
+      setEmailError('Please enter a valid email address.');
+      return;
+    } else {
+      setEmailError('');
+    }
+    const report = { category, description, location, email, state: selectedState, lga: selectedLga };
     console.log("Submitted report:", report);
     alert("Report submitted!");
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    
   };
+
+  const [selectedState, setSelectedState] = useState('');
+  const [selectedLga, setSelectedLga] = useState('');
+  const [lgas, setLgas] = useState<string[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const nigeriaData: any = rawNigeriaData;
+  const states = Object.keys(nigeriaData);
+
+  const [categoryError, setCategoryError] = useState('');
+  const [descriptionError, setDescriptionError] = useState('');
+  const [locationError, setLocationError] = useState('');
+  const [emailError, setEmailError] = useState('');
+
+
+  useEffect(() => {
+    if (selectedState && nigeriaData[selectedState]) {
+      setLgas(nigeriaData[selectedState].lgas || []);
+      setSelectedLga('');
+    }
+  }, [selectedState]);
+  
 
   return (
     <div className="report-issue-box">
+      <LocationSelector 
+        states={states}
+        lgas={lgas}
+        selectedState={selectedState}
+        selectedLga={selectedLga}
+        onStateChange={setSelectedState}
+        onLgaChange={setSelectedLga}
+      />
+      {locationError && <p className="error-text">{locationError}</p>}
+
+
       <p>Report An Issue</p>
       <div className="step-progress-container">
         {steps.map((_, index) => (
@@ -53,12 +130,16 @@ export default function ReportIssueForm() {
             <option value="Security">Security</option>
             <option value="Water & Sanitation">Water & Sanitation</option>
           </select>
+          {categoryError && <p className="error-text">{categoryError}</p>}
+
           <label>Issue Description</label>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Describe the issue in detail..."
           ></textarea>
+          {descriptionError && <p className="error-text">{descriptionError}</p>}
+
           <button onClick={next} className="continue-btn">Continue</button>
         </div>
       )}
@@ -85,12 +166,6 @@ export default function ReportIssueForm() {
               onClick={() => document.getElementById('fileInput')?.click()}
             >Browse Files</button>
           </div>
-          <label>Location</label>
-          <input
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            placeholder="Enter location or use current location"
-          />
           <div className="nav-btns">
             <button onClick={back} className="back-btn">Back</button>
             <button onClick={next} className="continue-btn">Continue</button>
@@ -103,8 +178,8 @@ export default function ReportIssueForm() {
           <div className="review-box">
             <p className='review-p'>Review Your Report</p>
             <p><strong>Category:</strong> {category}</p>
-            <p><strong>Location:</strong> {location}</p>
-            <p><strong>Status:</strong> Draft</p>
+            <p><strong>Location:</strong> {selectedState}, {selectedLga}</p>
+            <p><strong>Status:</strong> <span style={{color: 'yellow'}}>Draft</span></p>
           </div>
           <label>Contact Information</label>
           <input
@@ -113,9 +188,15 @@ export default function ReportIssueForm() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Your Email Address"
           />
+          {emailError && <p className="error-text">{emailError}</p>}
+
           <div className="nav-btns">
             <button onClick={back} className="back-btn">Back</button>
-            <button className="submit-btn" onClick={handleSubmit}>Submit Report</button>
+            <div className='submit-btn-container'>
+              <img src={Frame11} alt="" />
+              <button className="submit-btn" onClick={handleSubmit}>Submit Report</button>
+            </div>
+            
           </div>
         </div>
       )}

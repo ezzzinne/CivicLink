@@ -104,6 +104,8 @@
 
   .location-box {
     background: #F0FDF4;
+    font-family: inherit;
+    letter-spacing: normal;
   }
 
   .location-header {
@@ -199,8 +201,8 @@
     font-size: 0.9rem;
     color: #4b5563;
     margin: 0.2rem 0;
-    display: flex;
-    justify-content: space-between;
+    text-align: left;
+    padding: 0.5rem;
   }
 
   .rep-email {
@@ -209,6 +211,7 @@
     margin: 0.2rem 0;
     text-align: left;
     display: flex;
+    gap: 0.5rem;
   }
   
   .rep-email a {
@@ -234,6 +237,10 @@
   
   .contact-btn-span {
     padding-top: 0.35rem;
+  }
+
+  .contact-btn a {
+    color: white;
   }
 
   .see-more-card {
@@ -324,7 +331,6 @@
     margin-top: 1rem;
   }
   
-  /* Fancy loading spinner */
   .spinner {
     width: 40px;
     height: 40px;

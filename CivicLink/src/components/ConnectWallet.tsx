@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ethers } from 'ethers';
+import "../pages/LandingPage.css"
 
   const WalletConnectButton = () => {
   const [address, setAddress] = useState<string | null>(null);
@@ -23,11 +24,11 @@ import { ethers } from 'ethers';
   return (
     <div>
       {address ? (
-        <p className="wallet-connected">✔️ Wallet Connected: {address.slice(0, 6)}...{address.slice(-4)}</p>
+        <p className="wallet-connected">Wallet Connected: {address.slice(0, 6)}...{address.slice(-4)}</p>
       ) : (
-        <button className="connect-btn" onClick={connectWallet}>
+        <div className="nav-link" onClick={connectWallet}>
           Connect Wallet
-        </button>
+        </div>
       )}
     </div>
   );

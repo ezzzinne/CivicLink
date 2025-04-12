@@ -5,12 +5,13 @@ import Frame3 from "../assets/Frame3.svg";
 import Frame4 from '../assets/Frame4.svg';
 import Frame5 from '../assets/Frame5.svg';
 import Frame6 from '../assets/Frame6.svg';
-import Frame7 from '../assets/Frame7.svg';
 import Frame8 from '../assets/Frame8.svg';
+import Frame10 from "../assets/Frame10.svg";
 import Social1 from '../assets/Frame.svg';
 import Social2 from '../assets/Frame1.svg';
 import Social3 from '../assets/Frame2.svg';
 import Container from '../assets/Container.svg';
+import Gmail from "../assets/gmail.svg"
 import { Link } from 'react-router-dom';
 // import nigeriaData from '../data/nigeria-data.json';
 import rawNigeriaData from '../data/nigeria-data.json';
@@ -21,8 +22,9 @@ interface Representative {
   name: string;
   role: string;
   lga: string;
-  party: string;
+  duty: string;
   email: string;
+  no: number;
 }
 
 interface NigeriaData {
@@ -39,7 +41,7 @@ export default function GovernmentLookupPage() {
   const [, setLoading] = useState(false);
   const [lgas, setLgas] = useState<string[]>([]);
   const [representatives, setRepresentatives] = useState<Representative[]>([]);
-  const nigeriaData: NigeriaData = rawNigeriaData as NigeriaData;
+  const nigeriaData: NigeriaData = rawNigeriaData as unknown as NigeriaData;
 
   const states = Object.keys(nigeriaData);
 
@@ -76,9 +78,8 @@ export default function GovernmentLookupPage() {
           <img src={Logo} alt="Logo" />
           <ul className="nav-links">
             <li><Link to="/">Home</Link></li>
-            <li>Find Representatives</li>
-            <li>Government Offices</li>
             <li>About</li>
+            <li>Government Offices</li>
           </ul>
         </nav>
         <hr />
@@ -123,6 +124,7 @@ export default function GovernmentLookupPage() {
           <div className="location-container">
             <div className="location-box">
               <div className="location-header">
+                <img src={Frame10} alt="" />
                 <p>Select Your Location</p>
               </div>
 
@@ -164,13 +166,11 @@ export default function GovernmentLookupPage() {
                     </div>
                     <p>{rep.name}</p>
                     <p className="rep-role">{rep.role}</p>
-                    <p className="rep-party">
-                      <span>Political Party:</span> {rep.party}
-                    </p>
+                    <p className="rep-party">{rep.duty}</p>
                     <p className="rep-email">
-                      <img src={Frame7} alt="" /> <a href={`mailto:${rep.email}`}>{rep.email}</a>
+                      <img src={Gmail} alt="" /> <a href={`mailto:${rep.email}`}>{rep.email}</a>
                     </p>
-                    <button className="contact-btn"><span className='contact-btn-span'><img src={Frame8} alt="" /></span>Contact Representative</button>
+                    <button className="contact-btn"><span className='contact-btn-span'><img src={Frame8} alt="" /></span><a href={`tel:${rep.no}`}>{rep.no}</a></button>
                   </div>
                 ))}
 

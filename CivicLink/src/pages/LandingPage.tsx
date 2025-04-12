@@ -8,6 +8,7 @@ import Vector3 from '../assets/Vector2.svg';
 import Social1 from '../assets/Frame.svg';
 import Social2 from '../assets/Frame1.svg';
 import Social3 from '../assets/Frame2.svg';
+import Logo from "../assets/civic_link-removebg-preview 2.svg"
 import { Link } from 'react-router-dom';
 import ConnectWallet from '../components/ConnectWallet';
 
@@ -24,22 +25,25 @@ export default function LandingPage() {
 
         {/* Nav bar */}
         <nav className="navbar">
-          <h1 className="logo">CIVICLINK</h1>
           <div className="nav-controls">
-            <Link to="/">
-                <button className="btn connect-btn">Home</button>
-            </Link>
-            <button className="btn connect-btn">
-              <ConnectWallet />
-            </button>
-            <div className="language-switcher">
-              <img src={GlobeIcon} alt="language"></img>
-              <select onChange={handleLanguageChange}>
-                <option value="en">English</option>
-                <option value="ig">Igbo</option>
-                <option value="yo">Yoruba</option>
-                <option value="ha">Hausa</option>
-              </select>
+            <img src={Logo} alt="" />
+            <div className='nav-links'>
+              <Link to="/" className="nav-link">Home</Link>
+              <div className='nav-link'>About</div>
+              <div className='nav-link'>Government Offices</div>
+            </div>
+            <div className='nav-right'>
+              <div className='nav-link'><ConnectWallet /></div>
+              <div className="language-switcher">
+                <img src={GlobeIcon} alt="language"></img>
+                <select onChange={handleLanguageChange}>
+                  <option value="en">English</option>
+                  <option value="ig">Igbo</option>
+                  <option value="yo">Yoruba</option>
+                  <option value="ha">Hausa</option>
+                </select>
+              </div>
+              
             </div>
           </div>
         </nav>
@@ -52,7 +56,6 @@ export default function LandingPage() {
             <Link to="/lookup">
               <button className="btn primary-btn">{t("getStarted")}</button>
             </Link>
-            <button className="btn secondary-btn">{t("learnMore")}</button>
           </div>
           <img src={HeroImg} alt="" className="hero-img"></img>
         </div>
