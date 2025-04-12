@@ -13,7 +13,6 @@ import Social3 from '../assets/Frame2.svg';
 import Container from '../assets/Container.svg';
 import Gmail from "../assets/gmail.svg"
 import { Link } from 'react-router-dom';
-// import nigeriaData from '../data/nigeria-data.json';
 import rawNigeriaData from '../data/nigeria-data.json';
 import ReportIssueForm from '../components/ReportIssueForm';
 

@@ -36,11 +36,11 @@ export default function LandingPage() {
               <div className='nav-link'><ConnectWallet /></div>
               <div className="language-switcher">
                 <img src={GlobeIcon} alt="language"></img>
-                <select onChange={handleLanguageChange}>
-                  <option value="en">English</option>
-                  <option value="ig">Igbo</option>
-                  <option value="yo">Yoruba</option>
-                  <option value="ha">Hausa</option>
+                <select onChange={handleLanguageChange} id='google_translate_element'>
+                  <option value="en" id='google_translate_element'>English</option>
+                  <option value="ig" id='google_translate_element'>Igbo</option>
+                  <option value="yo" id='google_translate_element'>Yoruba</option>
+                  <option value="ha"id='google_translate_element'>Hausa</option>
                 </select>
               </div>
               

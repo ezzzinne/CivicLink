@@ -1,15 +1,19 @@
-.gov-page {
-    padding: 1rem;
-    font-family: 'Poppins', sans-serif;
-    background-color: white;
-  }
+body, html {
+  overflow-x: hidden;
+}
 
-  .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
+.gov-page {
+  padding: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
   
   .nav-links {
     display: flex;
@@ -30,13 +34,6 @@
     text-align: center;
     border-radius: 0.75rem;
   }
-  
-  /* .gov-actions {
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  } */
 
   .gov-actions {
     display: flex;
